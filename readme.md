@@ -68,3 +68,28 @@ Puis:
 ```bash
 kubectl get deploy -n my-namescpace
 ```
+
+
+### Créer un service
+
+Pour cette partie il faut utiliser ***part4.yaml***.
+
+Pour lancer le service il faut d'abord avoir le deploiement de lancer, donc:
+
+```bash
+kubectl create -f part3.yaml
+```
+
+Puis on lance le service:
+
+```bash
+kubectl create -f part4.yaml
+```
+
+Une fois fait on peut faire du `port-forwarding` pour verifier:
+
+```bash
+kubectl port-forward services/tp04-4 -n my-namescpace  3030:80
+```
+
+Et on peut accéder au [localhost](http://localhost:3030/ping).

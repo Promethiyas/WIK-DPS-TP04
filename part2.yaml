@@ -3,15 +3,17 @@ kind: ReplicaSet
 metadata:
   name: tp04-2
   namespace: my-namescpace
+  labels:
+    MyApp: tp04-2
 spec:
   replicas: 4
   selector:
     matchLabels:
-      tier: part1
+      tier: tp04-2
   template:
     metadata:
       labels:
-        tier: part1
+        tier: tp04-2
     spec:
       containers:
       - name: tp04-2
