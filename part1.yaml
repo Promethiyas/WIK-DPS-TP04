@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tp04-1
+  namespace: my-namescpace
+spec:
+  containers:
+  - name: tp04-1
+    image: registry.cluster.wik.cloud/public/echo
+    ports:
+    - containerPort: 8080
