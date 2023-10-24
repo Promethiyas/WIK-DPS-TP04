@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tp04-3
+  namespace: my-namescpace
+  labels:
+    app: tp04-3
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: tp04-3
+  template:
+    metadata:
+      labels:
+        app: tp04-3
+    spec:
+      containers:
+      - name: tp04-3
+        image: registry.cluster.wik.cloud/public/echo
+        ports:
+        - containerPort: 8080
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+
+      

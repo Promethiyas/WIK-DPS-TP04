@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: tp04-2
+  namespace: my-namescpace
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      tier: part1
+  template:
+    metadata:
+      labels:
+        tier: part1
+    spec:
+      containers:
+      - name: tp04-2
+        image: registry.cluster.wik.cloud/public/echo
+        ports:
+        - containerPort: 8080
