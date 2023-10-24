@@ -93,3 +93,34 @@ kubectl port-forward services/tp04-4 -n my-namescpace  3030:80
 ```
 
 Et on peut accéder au [localhost](http://localhost:3030/ping).
+
+
+### Ingress
+
+Pour cette partie il faut utiliser ***part5.yaml***.
+
+Pour lancer le service il faut d'abord avoir lancer:
+
+```bash
+kubectl create -f part3.yaml
+```
+```bash
+kubectl create -f part4.yaml
+```
+
+Puis:
+```bash
+kubectl create -f part5.yaml
+```
+
+On lance:
+
+```bash
+minikube tunnel
+```
+
+On doit avoir modifier `/etc/host` en ajoutant ***tp04-5.info*** à localhost.
+
+Et voilà:
+
+<img src="https://cdn.discordapp.com/attachments/905799668938723329/1166381922478461090/image.png?ex=654a48d0&is=6537d3d0&hm=ec9cba173dd8bc1e630c2103b2a5c15b9a2f26d2be207b1e1e60b3064ce26a00&"/>

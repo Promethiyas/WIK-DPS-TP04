@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: tp04-5
+  namespace: my-namescpace
+spec:
+  rules:
+  - host: tp04-5.info
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: tp04-4
+            port:
+              number: 80
